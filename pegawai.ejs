@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="landing-container">
+    <h2>Data Pegawai</h2>
+    <form action="/pegawai" method="POST">
+        <label for="name">Nama:</label>
+        <input type="text" name="name" id="name" required>
+        <label for="position">Jabatan:</label>
+        <input type="text" name="position" id="position">
+        <label for="contact">Kontak</label>
+        </form>
+        <table>
+            <tr>
+                <th>Nama</th>
+                <th>Kontak</th>
+            </tr>
+            <% data.forEach(function(pegawai) { %>
+                <tr>
+                    <td><%= pegawai.name %></td>
+                    <td><%= pegawai.contact %></td>
+                </tr>
+            <% }) %>
+        </table>
+        <div class="auth-links">
+            <a href="/dashboard">Kembali ke Dashboard</a>
+            </div>
+    </body>
+    </html>

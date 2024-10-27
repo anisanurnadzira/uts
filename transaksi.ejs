@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Penitipan</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="landing-container">
+    <h2>Data Penitipan</h2>
+    <form action="/transaksi" method="POST">
+        <label for="pelanggan_id">ID Pelanggan:</label>
+        <input type="number" name="pelanggan_id" id="pelanggan_id" required>
+        <label for="kendaraan_id">ID Kendaraan:</label>
+        <input type="number" name="kendaraan_id" id="kendaraan_id" required>
+        <label for="waktu_masuk">Waktu Masuk:</label>
+        <input type="datetime-local" name="waktu_masuk" id="waktu_masuk">
+        <label for="waktu_keluar">Waktu Keluar:</label>
+        <input type="datetime-local" name="waktu_keluar" id="waktu_keluar">
+        <button type="submit">Tambah Transaksi</button>
+    </form>
+    <table>
+        <tr>
+            <th>ID Pelanggan</th>
+            <th>ID Kendaraan</th>
+            <th>Waktu Masuk</th>
+            <th>Waktu Keluar</th>
+        </tr>
+        <% data.forEach(function(transaksi) { %>
+            <tr>
+                <td><%= transaksi.pelanggan_id %></td>
+                <td><%= transaksi.kendaraan_id %></td>
+                <td><%= transaksi.waktu_masuk %></td>
+                <td><%= transaksi.waktu_keluar %></td>
+            </tr>
+        <% }) %>
+    </table>
+    <div class="auth-links">
+    <a href="/dashboard">Kembali ke Dashboard</a>
+    </div>
+</body>
+</html>

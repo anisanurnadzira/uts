@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pelanggan</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="landing-container">
+    <h2>Data Pelanggan</h2>
+    <form action="/pelanggan" method="POST"> 
+    <form action="/pelanggan" method="POST">
+        <label for="name">Nama:</label>
+        <input type="text" name="name" id="name" required>
+        <label for="contact">Kontak:</label>
+        <input type="text" name="contact" id="contact">
+        <button type="submit">Tambah Pelanggan</button>
+    </form>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Kontak</th>
+        </tr>
+        <% data.forEach(function(pelanggan) { %>
+            <tr>
+                <td><%= pelanggan.name %></td>
+                <td><%= pelanggan.contact %></td>
+            </tr>
+        <% }) %>
+    </table>
+    <div class="auth-links">
+    <a href="/dashboard">Kembali ke Dashboard</a>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kendaraan</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="landing-container">
+    <h2>Data Kendaraan</h2>
+    <form action="/kendaraan" method="POST">
+        <label for="plat">Plat Nomor:</label>
+        <input type="text" name="plat" id="plat" required>
+        <label for="brand">Merk:</label>
+        <input type="text" name="brand" id="brand">
+        <label for="color">Warna:</label>
+        <input type="text" name="color" id="color">
+        <button type="submit">Tambah Kendaraan</button>
+    </form>
+    <table>
+        <tr>
+            <th>Plat Nomor</th>
+            <th>Merk</th>
+            <th>Warna</th>
+        </tr>
+        <% data.forEach(function(kendaraan) { %>
+            <tr>
+                <td><%= kendaraan.plat %></td>
+                <td><%= kendaraan.brand %></td>
+                <td><%= kendaraan.color %></td>
+            </tr>
+        <% }) %>
+    </table>
+    <div class="auth-links">
+    <a href="/dashboard">Kembali ke Dashboard</a> </div>
+    </div>
+</body>
+</html>
